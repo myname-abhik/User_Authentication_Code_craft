@@ -67,6 +67,7 @@ res.status(200).json({
         name:user.name,
         email:user.email,
         role:user.role,
+        photo:user.photo,
         token
      }
     

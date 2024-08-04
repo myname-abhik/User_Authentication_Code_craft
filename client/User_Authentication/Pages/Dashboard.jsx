@@ -36,29 +36,29 @@ const Dashboard = () => {
       
 
     }
-    useEffect(() => {
-      window.addEventListener('load', async ()=>{
-       // fetch user data from server here
-       // const userData = await fetchUserData(userId)
-       // setUserData(userData)
-       var formdata = new FormData();
-       formdata.append("email",userData.email)
-       console.log("hello world!")
-       const requestOptions = {
-         method: 'POST',
-         body: formdata,
-         redirect: 'follow'
-       };
-       fetch('http://localhost:3000/api/auth/image/upload1', requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        setfirst(result.photo)
-        console.log(result)
-       })
-      .catch(error => console.log('error', error));
+    // useEffect(() => {
+    //   window.addEventListener('load', async ()=>{
+    //    // fetch user data from server here
+    //    // const userData = await fetchUserData(userId)
+    //    // setUserData(userData)
+    //    var formdata = new FormData();
+    //    formdata.append("email",userData.email)
+    //    console.log("hello world!")
+    //    const requestOptions = {
+    //      method: 'POST',
+    //      body: formdata,
+    //      redirect: 'follow'
+    //    };
+    //    fetch('http://localhost:3000/api/auth/image/upload1', requestOptions)
+    //   .then(response => response.json())
+    //   .then(result => {
+    //     setfirst(result.photo)
+    //     console.log(result)
+    //    })
+    //   .catch(error => console.log('error', error));
 
-     })
-    }, [userData]);
+    //  })
+    // }, [userData]);
   return (
     <>
      <Card className='form-container'>
@@ -68,6 +68,9 @@ const Dashboard = () => {
         <Flex gap="large" vertical flex={1}>
           <h1>Welcome, {userData.name}</h1>
           <p>Your Email: {userData.email}</p>
+          <p>Your Id: {userData._id}</p>
+          <p>Your Role: {userData.role}</p>
+          
            
           
           <Button onClick={handlelogout}>Logout</Button>

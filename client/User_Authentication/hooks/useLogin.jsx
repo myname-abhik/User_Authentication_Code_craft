@@ -21,6 +21,7 @@ const UseLogin = () => {
             if (res.status === 200) {
                 message.success(data.message);
                 login(data.token, data.user);
+                console.log(data.user)
             } else if (res.status === 400) {
                 setError(data.message);
             } else {
